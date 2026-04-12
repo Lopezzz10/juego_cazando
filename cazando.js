@@ -31,11 +31,22 @@ function graficarComida() {
     graficarRectangulo(comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA, "#ff0000");
 };
 
+function limpiarCanva() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
 function iniciarJuego(){
     gatoX = (canvas.width / 2) - (ANCHO_GATO / 2);
     gatoY = (canvas.height / 2) - (ALTO_GATO / 2);
     comidaX = canvas.width - ANCHO_COMIDA;
     comidaY = canvas.height - ALTO_COMIDA;
+    graficarGato();
+    graficarComida();
+}
+
+function moverIzquierda() {
+    gatoX = gatoX - 10;
+    limpiarCanva();
     graficarGato();
     graficarComida();
 }
@@ -50,5 +61,7 @@ function mover(direccion){
 
 document.getElementById("btnArriba").onclick = () => mover("arriba");
 document.getElementById("btnAbajo").onclick = () => mover("abajo");
-document.getElementById("btnIzquierda").onclick = () => mover("izquierda");
+document.getElementById("btnIzquierda").onclick = () => moverIzquierda();
 document.getElementById("btnDerecha").onclick = () => mover("derecha");
+
+iniciarJuego();
