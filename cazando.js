@@ -74,8 +74,14 @@ function iniciarJuego(){
     gatoY = (canvas.height / 2) - (ALTO_GATO / 2);
     comidaX = canvas.width - ANCHO_COMIDA;
     comidaY = canvas.height - ALTO_COMIDA;
+    puntos = 0;
+    tiempo = 10;
+    mostrarEnSpan("puntos", puntos);
+    mostrarEnSpan("tiempo", tiempo);
+    limpiarCanva();
     graficarGato();
     graficarComida();
+    clearInterval(intervalo);
     intervalo = setInterval(restarTiempo, 1000);
 }
 
@@ -115,5 +121,6 @@ document.getElementById("btnArriba").onclick = () => moverArriba();
 document.getElementById("btnAbajo").onclick = () => moverAbajo();
 document.getElementById("btnIzquierda").onclick = () => moverIzquierda();
 document.getElementById("btnDerecha").onclick = () => moverDerecha();
+document.getElementById("btnReiniciar").onclick = () => iniciarJuego();
 
 iniciarJuego();
