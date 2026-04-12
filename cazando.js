@@ -18,8 +18,10 @@ let comidaY = 0;
 const ALTO_COMIDA = 30;
 const ANCHO_COMIDA = 30;
 
-// Puntaje
+// Puntaje y tiempo
 let puntos = 0;
+let tiempo = 10;
+let intervalo;
  
 function graficarRectangulo(x, y, ancho, alto, color) {
     ctx.fillStyle = color;
@@ -38,19 +40,32 @@ function limpiarCanva() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
+function restarTiempo() {
+    tiempo = tiempo - 1;
+    mostrarEnSpan("tiempo", tiempo);
+
+    if (tiempo === 0) {
+        clearInterval(intervalo);
+        alert("¡Game Over!");
+    }
+}
+
 function detectarColision() {
     if (gatoX < comidaX + ANCHO_COMIDA &&
         gatoX + ANCHO_GATO > comidaX &&
         gatoY < comidaY + ALTO_COMIDA &&
         gatoY + ALTO_GATO > comidaY) {
 
-        alert("¡El gato comió la comida!");
-
         comidaX = generarAleatorio(0, canvas.width - ANCHO_COMIDA);
         comidaY = generarAleatorio(0, canvas.height - ALTO_COMIDA);
 
         puntos = puntos + 1;
         mostrarEnSpan("puntos", puntos);
+
+        if (puntos === 6) {
+            clearInterval(intervalo);
+            alert("¡Ganaste!");
+        }
     }
 }
 
@@ -61,6 +76,7 @@ function iniciarJuego(){
     comidaY = canvas.height - ALTO_COMIDA;
     graficarGato();
     graficarComida();
+    intervalo = setInterval(restarTiempo, 1000);
 }
 
 function moverIzquierda() {
