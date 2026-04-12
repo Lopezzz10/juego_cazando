@@ -1,4 +1,4 @@
-let canvas = document.getElementById("juego");
+let canvas = document.getElementById("areaJuego");
 let ctx = canvas.getContext("2d");
 let btnArriba = document.getElementById("btnArriba")
 let btnAbajo = document.getElementById("btnAbajo")
@@ -37,6 +37,7 @@ function iniciarJuego(){
     graficarGato();
     graficarComida();
 }
+
 function mover(direccion){
     if (direccion === "arriba") gatoY -= VELOCIDAD;
     if (direccion === "abajo") gatoY += VELOCIDAD;
@@ -49,6 +50,3 @@ document.getElementById("btnArriba").onclick = () => mover("arriba");
 document.getElementById("btnAbajo").onclick = () => mover("abajo");
 document.getElementById("btnIzquierda").onclick = () => mover("izquierda");
 document.getElementById("btnDerecha").onclick = () => mover("derecha");
-
-
-iniciarJuego();
