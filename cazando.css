@@ -5,7 +5,7 @@
 body {
   text-align: center;
   font-family: 'Nunito', Arial, sans-serif;
-  background: #1a0533;
+  background: url('fondo.jpg') center/cover no-repeat fixed;
   min-height: 100vh;
   padding: 24px 16px 32px;
 }
@@ -41,7 +41,6 @@ canvas {
   margin: 16px 0 12px;
 }
 
-/* Envuelve cada stat en un div.stat-box */
 .stat-box {
   background: #2d1b4e;
   border: 2px solid #7c3aed;

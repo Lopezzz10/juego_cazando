@@ -1,0 +1,17 @@
+//prompt 1
+Soy estudiante principiante de primer nivel en desarrollo de software web, 
+actúa como tutor en programación web. Estoy desarrollando un taller de un 
+juego básico llamado 'Cazando'. ¿Puedes buscar imágenes en la web con las 
+que quedaría bien el juego? El juego tiene un estilo oscuro con colores 
+morados y amarillos.
+
+//prompt 2
+¿Cómo pongo las imágenes en el código? Tengo un archivo fondo.jpg que 
+quiero usar.
+
+//prompt 3
+Pon esta imagen como fondo del juego usando el archivo fondo.jpg
+
+//prompt 4
+No quiero ponerla en el canvas, sino en el fondo detrás de todo el 
+contenido de la página.
