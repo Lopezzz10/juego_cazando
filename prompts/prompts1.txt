@@ -1,0 +1,6 @@
+//prompt 1
+Soy estudiante principiante de primer nivel en desarrollo de software web, actúa como tutor en programación web. Estoy desarrollando un taller de un juego básico llamado 'Cazando', te comparto mi CSS y HTML. ¿Me puedes decir cómo mejorar el diseño para que se vea más llamativo?
+//prompt 2
+Me gusta la idea, ¿puedes aplicar esos cambios directamente en el CSS? Quiero que se vea como un videojuego, con colores vibrantes y tipografía divertida
+//prompt 3
+Queda muy bien, ahora también modifica el HTML para que soporte los nuevos estilos. Eso sí, no cambies los IDs porque si no se me rompe el JavaScript

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Juego Cazando</title>
+  <link rel="stylesheet" href="cazando.css">
+</head>
+
+<body onload="iniciarJuego()">
+
+  <h1>Juego Cazando</h1>
+  <p class="autor">por José López</p>
+
+  <canvas id="areaJuego" width="500" height="500"></canvas>
+
+  <div class="panel">
+    <div class="stat-box">
+      <span class="stat-label">Puntos</span>
+      <span class="stat-value" id="puntos">0</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-label">Tiempo</span>
+      <span class="stat-value" id="tiempo">10</span>
+    </div>
+  </div>
+
+  <div class="controles">
+    <div class="controles-row">
+      <button id="btnArriba">⬆</button>
+    </div>
+    <div class="controles-row">
+      <button id="btnIzquierda">⬅</button>
+      <button id="btnAbajo">⬇</button>
+      <button id="btnDerecha">➡</button>
+    </div>
+  </div>
+
+  <button id="btnReiniciar">⟳ REINICIAR</button>
+
+  <p id="mensaje"></p>
+
+  <script src="utils.js"></script>
+  <script src="cazando.js"></script>
+
+</body>
+
+</html>
