@@ -70,9 +70,9 @@ function detectarColision() {
 }
 
 function iniciarJuego(){
-    gatoX = (canvas.width / 2) - (ANCHO_GATO / 2);
-    gatoY = (canvas.height / 2) - (ALTO_GATO / 2);
-    comidaX = canvas.width - ANCHO_COMIDA;
+    gatoX = 0
+    gatoY = 0
+    comidaX = 0
     comidaY = canvas.height - ALTO_COMIDA;
     puntos = 0;
     tiempo = 60;
