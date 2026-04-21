@@ -1,5 +1,7 @@
 let canvas = document.getElementById("areaJuego");
 let ctx = canvas.getContext("2d");
+let imgGato = new Image();
+imgGato.src = "gato2.png";
 let btnArriba = document.getElementById("btnArriba")
 let btnAbajo = document.getElementById("btnAbajo")
 let btnIzquierda = document.getElementById("btnIzquierda")
@@ -30,8 +32,8 @@ function graficarRectangulo(x, y, ancho, alto, color) {
 };
  
 function graficarGato() {
-    graficarRectangulo(gatoX, gatoY, ANCHO_GATO, ALTO_GATO, "#000000");
-};
+    ctx.drawImage(imgGato, gatoX, gatoY, ANCHO_GATO, ALTO_GATO);
+}
  
 function graficarComida() {
     graficarRectangulo(comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA, "#ff0000");
@@ -136,5 +138,6 @@ document.getElementById("btnAbajo").onclick = () => moverAbajo();
 document.getElementById("btnIzquierda").onclick = () => moverIzquierda();
 document.getElementById("btnDerecha").onclick = () => moverDerecha();
 document.getElementById("btnReiniciar").onclick = () => iniciarJuego();
-
-iniciarJuego();
+imgGato.onload = function() {
+    iniciarJuego();
+};
