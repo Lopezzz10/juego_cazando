@@ -1,7 +1,13 @@
 let canvas = document.getElementById("areaJuego");
 let ctx = canvas.getContext("2d");
+
+// Imágenes
 let imgGato = new Image();
 imgGato.src = "gato2.png";
+
+let imgRaton = new Image();
+imgRaton.src = "raton.png";
+
 let btnArriba = document.getElementById("btnArriba")
 let btnAbajo = document.getElementById("btnAbajo")
 let btnIzquierda = document.getElementById("btnIzquierda")
@@ -36,7 +42,7 @@ function graficarGato() {
 }
  
 function graficarComida() {
-    graficarRectangulo(comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA, "#ff0000");
+    ctx.drawImage(imgRaton, comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA);
 };
 
 function limpiarCanva() {
@@ -139,6 +145,16 @@ document.getElementById("btnAbajo").onclick = () => moverAbajo();
 document.getElementById("btnIzquierda").onclick = () => moverIzquierda();
 document.getElementById("btnDerecha").onclick = () => moverDerecha();
 document.getElementById("btnReiniciar").onclick = () => iniciarJuego();
+
+// Esperar que ambas imágenes carguen
+let imagenesListas = 0;
+
 imgGato.onload = function() {
-    iniciarJuego();
+    imagenesListas++;
+    if (imagenesListas === 2) iniciarJuego();
+};
+
+imgRaton.onload = function() {
+    imagenesListas++;
+    if (imagenesListas === 2) iniciarJuego();
 };
