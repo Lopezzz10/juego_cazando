@@ -5,6 +5,7 @@ let btnAbajo = document.getElementById("btnAbajo")
 let btnIzquierda = document.getElementById("btnIzquierda")
 let btnDerecha = document.getElementById("btnDerecha")
 const VELOCIDAD = 15; 
+let tiempoBase = 15
 
 // Gato
 let gatoX = 0;
@@ -62,9 +63,18 @@ function detectarColision() {
         puntos = puntos + 1;
         mostrarEnSpan("puntos", puntos);
 
-        tiempo = 15
-        mostrarEnSpan("tiempo", tiempo)
-        
+        // Reducir el tiempo base en 1 cada vez que se atrapa la comida
+        tiempoBase = tiempoBase - 1;
+        if (tiempoBase < 5) {
+            tiempoBase = 5;
+        }
+
+        // Reiniciar el contador con el nuevo tiempo base reducido
+        clearInterval(intervalo);
+        tiempo = tiempoBase;
+        mostrarEnSpan("tiempo", tiempo);
+        intervalo = setInterval(actualizarTiempo, 1000);
+
         if (puntos === 6) {
             clearInterval(intervalo);
             alert("¡Ganaste!");
@@ -79,6 +89,7 @@ function iniciarJuego(){
     comidaY = canvas.height - ALTO_COMIDA;
     puntos = 0;
     tiempo = 15;
+    tiempo = tiempoBase
     mostrarEnSpan("puntos", puntos);
     mostrarEnSpan("tiempo", tiempo);
     limpiarCanva();
