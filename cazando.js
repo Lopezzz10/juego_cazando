@@ -62,6 +62,9 @@ function detectarColision() {
         puntos = puntos + 1;
         mostrarEnSpan("puntos", puntos);
 
+        tiempo = 15
+        mostrarEnSpan("tiempo", tiempo)
+        
         if (puntos === 6) {
             clearInterval(intervalo);
             alert("¡Ganaste!");
