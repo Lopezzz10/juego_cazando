@@ -75,7 +75,7 @@ function detectarColision() {
         clearInterval(intervalo);
         tiempo = tiempoBase;
         mostrarEnSpan("tiempo", tiempo);
-        intervalo = setInterval(actualizarTiempo, 1000);
+        intervalo = setInterval(restarTiempo, 1000);
 
         if (puntos === 6) {
             clearInterval(intervalo);
@@ -91,6 +91,7 @@ function iniciarJuego(){
     comidaY = canvas.height - ALTO_COMIDA;
     puntos = 0;
     tiempo = 15;
+    tiempoBase = 15;
     tiempo = tiempoBase
     mostrarEnSpan("puntos", puntos);
     mostrarEnSpan("tiempo", tiempo);
