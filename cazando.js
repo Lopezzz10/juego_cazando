@@ -20,7 +20,7 @@ const ANCHO_COMIDA = 30;
 
 // Puntaje y tiempo
 let puntos = 0;
-let tiempo = 10;
+let tiempo = 15;
 let intervalo;
  
 function graficarRectangulo(x, y, ancho, alto, color) {
@@ -75,7 +75,7 @@ function iniciarJuego(){
     comidaX = 0
     comidaY = canvas.height - ALTO_COMIDA;
     puntos = 0;
-    tiempo = 60;
+    tiempo = 15;
     mostrarEnSpan("puntos", puntos);
     mostrarEnSpan("tiempo", tiempo);
     limpiarCanva();
